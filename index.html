@@ -44,11 +44,14 @@
     ys.src = n;
     ys.charset = 'utf-8';
     ys.onload = function() {
-      // Once SDK is loaded, set custom attributes
+      // Create and assign variable for department
+      var departmentValue = "sales"; 
+
+      // Use the variable inside Database.set
       Genesys("command", "Database.set", {
         messaging: {
           customAttributes: {
-            department: "sales",
+            department: departmentValue,
             property_type: "apartment",
             device: "mobile"
           }
@@ -61,5 +64,6 @@
     deploymentId: '5efb2a3a-e6ed-4cbd-83a9-fa1cc6f83fb7'
   });
 </script>
+
 </body>
 </html>
